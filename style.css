@@ -1,0 +1,48 @@
+.photo-container {
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically, if needed */
+    flex-direction: column; /* Stack items vertically */
+    position: relative; /* For absolute positioning of overlay text */
+}
+
+.responsive-image {
+    width: 90%; /* Adjust this value to make the image smaller */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 90%; /* Limits the image to 90% of the screen width */
+    display: block; /* Remove any extra space below the image */
+    margin-top: 50px; /* Space above the image */
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Optional: If you want to add a blur effect on hover */
+.photo-container:hover .responsive-image {
+    filter: blur(5px); /* Change this value to adjust the blur */
+}
+
+.hover-title, .hover-text {
+    display: none; /* Initially hide the title and text */
+    position: absolute; /* Position them over the image */
+    color: #ffffff; /* Text color */
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    padding: 20px; /* Padding around the text */
+    text-align: center; /* Center text */
+    width: 80%; /* Make the width responsive */
+    z-index: 10; /* Ensure they are above other elements */
+}
+
+.hover-title {
+    top: 10%; /* Position the title higher on the image */
+    font-size: 120px;
+}
+
+.hover-text {
+    top: 70%; /* Position the text lower on the image */
+    transform: translate(0, -50%); /* Center the text vertically */
+}
+
+.photo-container:hover .hover-title,
+.photo-container:hover .hover-text {
+    display: block; /* Show title and text when hovering over the photo container */
+}
